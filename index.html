@@ -7,53 +7,90 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black">
-    <nav class="border-b-[1px] border-[#8A8A8A] justify-between flex py-3 px-9">
-        <h1 class="text-3xl text-white font-bold py-1">Brandname</h1>
-        <div class="flex gap-5 py-1">
-            <a href="" class="text-xl text-neutral-100 bg-slate-950 py-1 px-2">Home</a>
-            <a href="" class="text-xl text-neutral-100 bg-slate-950 pt-1 px-3">Features</a>
-            <a href="" class="text-xl text-neutral-100 bg-slate-950 pt-1 px-3" >Pricing</a>
-            <a href="" class="text-xl text-neutral-100 bg-slate-950 pt-1 px-3">Contact</a>
-        </div>
-        <div class="py-3">
-            <a href="" class="text-xl text-white border-[1px]	border-[#8A8A8A] py-2 px-3 hover:bg-slate-800 hover:border-slate-800 rounded-lg"> Sign Up</a>
-        </div>
-    </nav>
-    <section class="flex flex-col items-center text-center mt-[100px]">
-        <p class="bg-[#172554] text-blue-300 text-[18px] w-[125px] py-1 rounded-lg">New Launch</p>
-        <h1 class="text-white text-7xl font-bold mt-[20px] ">Build something people love</h1>
-        <p class="text-neutral-100 text-[18px] mt-[25px]">A short Clear sentence that explains what your product <br> does and who it helps</p>
-        <div class="flex gap-4 mt-[30px]">
-            <a href="" class="bg-white py-2 px-3 text-[18px] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg">Get Started</a>
-            <a href="" class="border-[1px]	border-[#8A8A8A] text-white py-2 px-3 text-[18px] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg"> Learn More</a>
-        </div>
-    </section>
-    <section class="grid grid-cols-3 gap-5 mt-[40px] px-[100px] h-[355px]">
-        <div class="bg-[#2A2A2A] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg">
-            <img src="Screenshot_20260923-182033_1.png" class="w-[300px] h-[200px] rounded-lg mt-[30px] ml-[35px]">
-            <h2 class="font-bold text-white text-4xl mt-[30px] ml-[30px]">Fast</h2>
-            <p class="text-neutral-300 text-[20px] ml-[30px] mt-[5px]">Short description of this feature.</p>
-        </div>
-        <div class="bg-[#2A2A2A] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg">
-            <img src="Screenshot_20260923-182033_1.png" class="w-[300px] h-[200px] rounded-lg mt-[30px] ml-[35px]">
-            <h2 class="font-bold text-white text-4xl mt-[30px] ml-[30px]">Secure</h2>
-            <p class="text-neutral-300 text-[20px] ml-[30px] mt-[5px]">Short description of this feature.</p>
-        </div>
-        <div class="bg-[#2A2A2A] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg">
-            <img src="Screenshot_20260923-182033_1.png" class="w-[300px] h-[200px] rounded-lg mt-[30px] ml-[35px]">
-            <h2 class="font-bold text-white text-4xl mt-[30px] ml-[30px]">Responsive</h2>
-            <p class="text-neutral-300 text-[20px] ml-[30px] mt-[5px]">Short description of this feature.</p>
-        </div>
- 
-    </section>
-    <section class="flex justify-between mt-[50px] mb-[30px] px-[50px]">
-        <p class="text-neutral-300"> C 2026 brandname</p>
-        <div class="flex gap-3 text-[18px] text-neutral-300">
-            <a href="" class=" hover:text-white hover:underline transition">Twitter</a>
-            <a href="" class=" hover:text-white hover:underline transition">Instagram</a>
-            <a href="" class=" hover:text-white hover:underline transition">Linkedin</a>
+    <!-- NAV -->
+    <nav class="border-b border-[#8A8A8A] py-3 px-4 sm:px-9">
+        <div class="flex items-center justify-between">
+            <h1 class="text-2xl sm:text-3xl text-white font-bold py-1">Brandname</h1>
+
+            <!-- Desktop links -->
+            <div class="hidden md:flex gap-3 lg:gap-5 py-1">
+                <a href="" class="text-xl text-neutral-100 bg-slate-950 py-1 px-3">Home</a>
+                <a href="" class="text-xl text-neutral-100 bg-slate-950 py-1 px-3">Features</a>
+                <a href="" class="text-xl text-neutral-100 bg-slate-950 py-1 px-3">Pricing</a>
+                <a href="" class="text-xl text-neutral-100 bg-slate-950 py-1 px-3">Contact</a>
+            </div>
+
+            <!-- Desktop sign up -->
+            <div class="hidden md:block">
+                <a href="" class="text-xl text-white border border-[#8A8A8A] py-2 px-3 hover:bg-slate-800 hover:border-slate-800 rounded-lg">Sign Up</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-white p-2" aria-label="Toggle menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
 
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 pt-4 pb-2">
+            <a href="" class="text-xl text-neutral-100 bg-slate-950 py-2 px-3">Home</a>
+            <a href="" class="text-xl text-neutral-100 bg-slate-950 py-2 px-3">Features</a>
+            <a href="" class="text-xl text-neutral-100 bg-slate-950 py-2 px-3">Pricing</a>
+            <a href="" class="text-xl text-neutral-100 bg-slate-950 py-2 px-3">Contact</a>
+            <a href="" class="text-xl text-white text-center border border-[#8A8A8A] py-2 px-3 hover:bg-slate-800 hover:border-slate-800 rounded-lg">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="flex flex-col items-center text-center mt-16 sm:mt-24 lg:mt-[100px] px-4">
+        <p class="bg-[#172554] text-blue-300 text-base sm:text-[18px] px-4 py-1 rounded-lg">New Launch</p>
+        <h1 class="text-white text-4xl sm:text-5xl lg:text-7xl font-bold mt-5 max-w-4xl">Build something people love</h1>
+        <p class="text-neutral-100 text-base sm:text-[18px] mt-6 max-w-xl">A short Clear sentence that explains what your product does and who it helps</p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto max-w-xs sm:max-w-none">
+            <a href="" class="bg-white py-2 px-4 text-[18px] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg">Get Started</a>
+            <a href="" class="border border-[#8A8A8A] text-white py-2 px-4 text-[18px] rounded-lg hover:scale-105 transition duration-300 hover:shadow-lg">Learn More</a>
+        </div>
     </section>
+
+    <!-- FEATURES -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 px-4 sm:px-8 lg:px-[100px]">
+        <div class="bg-[#2A2A2A] rounded-lg p-6 sm:p-8 hover:scale-105 transition duration-300 hover:shadow-lg">
+            <img src="Screenshot_20260923-182033_1.png" alt="" class="w-full h-48 object-cover rounded-lg">
+            <h2 class="font-bold text-white text-3xl sm:text-4xl mt-6">Fast</h2>
+            <p class="text-neutral-300 text-lg sm:text-[20px] mt-1">Short description of this feature.</p>
+        </div>
+        <div class="bg-[#2A2A2A] rounded-lg p-6 sm:p-8 hover:scale-105 transition duration-300 hover:shadow-lg">
+            <img src="Screenshot_20260923-182033_1.png" alt="" class="w-full h-48 object-cover rounded-lg">
+            <h2 class="font-bold text-white text-3xl sm:text-4xl mt-6">Secure</h2>
+            <p class="text-neutral-300 text-lg sm:text-[20px] mt-1">Short description of this feature.</p>
+        </div>
+        <div class="bg-[#2A2A2A] rounded-lg p-6 sm:p-8 hover:scale-105 transition duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1">
+            <img src="Screenshot_20260923-182033_1.png" alt="" class="w-full h-48 object-cover rounded-lg">
+            <h2 class="font-bold text-white text-3xl sm:text-4xl mt-6">Responsive</h2>
+            <p class="text-neutral-300 text-lg sm:text-[20px] mt-1">Short description of this feature.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="flex flex-col sm:flex-row items-center justify-between gap-3 mt-12 mb-8 px-4 sm:px-[50px]">
+        <p class="text-neutral-300">&copy; 2026 brandname</p>
+        <div class="flex gap-4 text-[18px] text-neutral-300">
+            <a href="" class="hover:text-white hover:underline transition">Twitter</a>
+            <a href="" class="hover:text-white hover:underline transition">Instagram</a>
+            <a href="" class="hover:text-white hover:underline transition">Linkedin</a>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            const open = menu.classList.toggle('hidden') === false;
+            menu.classList.toggle('flex', open);
+            btn.setAttribute('aria-expanded', open);
+        });
+    </script>
 </body>
 </html>
